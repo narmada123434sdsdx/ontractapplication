@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-// Keep only this ONE bootstrap import
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

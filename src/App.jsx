@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
 
 /* Common / Individual */
@@ -283,12 +284,6 @@ export default function App() {
   const [user, setUser] = React.useState(null);
   const [admin, setAdmin] = React.useState(null);
   const [contractor, setContractor] = React.useState(null);
-
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js")
-      .then(() => console.log("Bootstrap JS Loaded"))
-      .catch((err) => console.error("Bootstrap JS Load Failed:", err));
-  }, []);
 
   // On app load, restore user/admin/contractor from localStorage
   useEffect(() => {
