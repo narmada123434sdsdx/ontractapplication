@@ -284,6 +284,12 @@ export default function App() {
   const [admin, setAdmin] = React.useState(null);
   const [contractor, setContractor] = React.useState(null);
 
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js")
+      .then(() => console.log("Bootstrap JS Loaded"))
+      .catch((err) => console.error("Bootstrap JS Load Failed:", err));
+  }, []);
+
   // On app load, restore user/admin/contractor from localStorage
   useEffect(() => {
     try {

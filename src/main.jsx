@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Keep only this ONE bootstrap import
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
