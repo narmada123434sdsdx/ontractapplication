@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './css/CompanyProfile.css';
+<<<<<<< HEAD
 
 import { BASE_URL, BASE_URLS, apiGet, apiPost, apiPut, apiDelete } from "../../api";
+=======
+import { BASE_URLS } from '../../api';
+>>>>>>> ab8d71c338cfff8b0ebe0ecb10b2571ac184446d
 
 
 function CompanyProfile({ contractor }) {
@@ -39,7 +43,22 @@ const [mailingPostalCode, setMailingPostalCode] = useState('');
 const [billingPostalCode, setBillingPostalCode] = useState('');
 
 const [regions, setRegions] = useState({});
+<<<<<<< HEAD
 const [states, setStates] = useState([]);
+=======
+// const [states, setStates] = useState([]);
+
+
+
+  // // Malaysia Regions (simple map)
+  // const malaysiaRegions = {
+  //   "Central": ["Kuala Lumpur", "Selangor", "Putrajaya"],
+  //   "Northern": ["Kedah", "Penang", "Perlis", "Perak"],
+  //   "Southern": ["Johor", "Melaka", "Negeri Sembilan"],
+  //   "Eastern": ["Kelantan", "Terengganu", "Pahang"],
+  //   "Borneo": ["Sabah", "Sarawak"]
+  // };
+>>>>>>> ab8d71c338cfff8b0ebe0ecb10b2571ac184446d
 
   
     const malaysianBanks = [
@@ -110,11 +129,19 @@ const [states, setStates] = useState([]);
     }
   };
 
+<<<<<<< HEAD
  // Fetch Malaysia Regions
 useEffect(() => {
   apiGet("/api/region/")
     .then(data => setRegions(Array.isArray(data) ? data : []))
     .catch(() => setRegions([]));
+=======
+  useEffect(() => {
+  fetch(`${BASE_URLS.user}/api/malaysia_regions`)
+    .then(r => r.json())
+    .then(setRegions)
+    .catch(() => {});
+>>>>>>> ab8d71c338cfff8b0ebe0ecb10b2571ac184446d
 }, []);
 
 const fetchStates = (region, index) => {
@@ -675,7 +702,24 @@ if (!finalBilling.endsWith(billingPostalCode)) {
             <h5>Locations & Services<span className="required-asterisk">*</span></h5>
             {locationServiceList.map((it, idx) => (
               <div key={idx} className="row mb-2 align-items-end">
+<<<<<<< HEAD
      
+=======
+                {/* <div className="col-md-3">
+                  <label className="form-label small">Region</label>
+                  <select className={`form-select ${errors[`location-${idx}`] ? 'is-invalid' : ''}`} value={it.region || ''} onChange={(e) => handleServiceChange(idx, 'region', e.target.value)}>
+                    <option value="">Select Region</option>
+                    {Object.keys(malaysiaRegions).map(r => <option key={r} value={r}>{r}</option>)}
+                  </select>
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label small">State</label>
+                  <select className={`form-select ${errors[`location-${idx}`] ? 'is-invalid' : ''}`} value={it.location || ''} onChange={(e) => handleServiceChange(idx, 'location', e.target.value)} disabled={!it.region}>
+                    <option value="">Select State</option>
+                    {(malaysiaRegions[it.region] || []).map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div> */}
+>>>>>>> ab8d71c338cfff8b0ebe0ecb10b2571ac184446d
                 <div className="col-md-3">
                   <label className="form-label small">Region</label>
                   <select
